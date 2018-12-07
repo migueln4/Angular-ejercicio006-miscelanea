@@ -1,0 +1,27 @@
+<!--Se puede usar el [ngClass] para concatenar su contenido al atributo class normal. Aunque es importante que lo que se le envíe sea una cadena, así que hay que hacerlo de la siguiente forma (ojo a las comillas):
+[ngClass]="'alert-primary'"
+Sin embargo, se le puede pasar una variable que contenga un string para que haga lo mismo y se pueda hacer dinámico. Por ejemplo, así:
+[ngClass]="alerta" <-- Donde alerta es una variable que se ha creado en el componente.ts.
+-->
+<div class="alert" [ngClass]="alerta" role="alert">
+    A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>
+
+<!--También se pueden cambiar las clases con los eventos de clic, como casi todo-->
+<button type="button" class="btn btn-danger botoncete" (click)="alerta = 'alert-danger'">DANGER</button>
+<button type="button" class="btn btn-success botoncete" (click)="alerta = 'alert-success'">SUCCESS</button>
+
+<br><br>
+
+<!--Dentro de las llaves cuado se trata de un [ngClass] también se puden hacer ciertas condiciones como esta:
+[ngClass]="{'text-danger':false}" 
+Para que sea una especie de condicional ternario, se usa la siguiente sintaxis:
+[ngClass]="{'text-danger':propiedades.danger, 'text-info':!propiedades.danger}"
+(lo de arriba quiere decir que se le pondrá la clase text-danger a la etiqueta cuando propiedades.danger sea verdadero. Si es falso, se le pone la propiedad text-info. Ojo al uso de la coma. )
+-->
+<h3 [ngClass]="{'text-danger':propiedades.danger, 'text-info':!propiedades.danger}">Un h3 cualquiera</h3>
+
+<!--Aquí también se cambia la propiedad de lo que depende arriba para que se vean los cambios.-->
+<button (click)="propiedades.danger = !propiedades.danger" type="button" name="boton" class="btn botoncete" [ngClass]="{'btn-danger':propiedades.danger, 'btn-info':!propiedades.danger}">
+    Cambiar
+</button>
