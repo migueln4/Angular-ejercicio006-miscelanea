@@ -1,0 +1,12 @@
+Hay una alternativa para instalar cosas cuando la librería que se quiere usar no tiene medio de ser instalada mediante Node Package Manager.
+
+En primer lugar, hay que descargarlo todo en el ordenador.
+
+En la carpeta src/assets es donde se deben introducir todas las cosas. Es muy recomendable organizarlo internamente por carpetas para ser mucho más ordenado.
+
+Una vez que ya está todo en su carpeta, se puede usar Angular CLI para hacer la instalación.
+
+En el archivo angular.json, hay que colocar las referencias a todo lo que queremos introducir.
+- En "styles", se añade: "src/assets/b4/css/bootstrap.min.css"
+
+- En "scripts", hay que añadir todo lo demás de Bootstrap 4.
