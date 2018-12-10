@@ -25,3 +25,15 @@ Para que sea una especie de condicional ternario, se usa la siguiente sintaxis:
 <button (click)="propiedades.danger = !propiedades.danger" type="button" name="boton" class="btn botoncete" [ngClass]="{'btn-danger':propiedades.danger, 'btn-info':!propiedades.danger}">
     Cambiar
 </button>
+<br><br>
+
+<h3>Proceso asíncrono</h3>
+<!--Todo lo que hay aquí dentro se maneja con la variable "loading" que se ha creado en el componente.-->
+<button type="button" name="button" class="btn btn-primary" (click)="ejecutar()" [disabled]="loading">
+    <!--Angular también es capaz de manejar la propiedad disable de HTML de esta forma.-->
+    <i class="fa" 
+    [ngClass]="{'fa-save':!loading,'fa-refresh fa-spin':loading}"></i>
+<!--Lo que hace aquí es poner una clase si loading es falso y otra si es verdadero, nada más.-->
+    <span *ngIf="!loading"> Guardar cambios</span>
+    <span *ngIf="loading"> Espere, por favor</span>
+</button>
