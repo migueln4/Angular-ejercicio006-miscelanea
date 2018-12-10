@@ -24,7 +24,8 @@ import { Component, OnInit } from '@angular/core';
     <button type="button" class="btn btn-primary botoncete" (click)="tamano = tamano + 5">
       <i class="fa fa-plus"></i>
     </button>
-    <button type="button" class="btn btn-primary botoncete" (click)="tamano = tamano - 5">
+    <button type="button" class="btn btn-primary botoncete" (click)="reducirTamano()">
+    <!--Ojo, que con la función de reducirTamano() se contempla que no se atribuyan valores negativos a esta variable.-->
     <i class="fa fa-minus"></i>
   </button>
   `,
@@ -41,6 +42,11 @@ export class NgStyleComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  reducirTamano() {
+    if(this.tamano > 0)
+      this.tamano = this.tamano - 5;
   }
 
 }

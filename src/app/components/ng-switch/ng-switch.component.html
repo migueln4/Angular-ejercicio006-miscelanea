@@ -1,0 +1,32 @@
+<!--Este es un switch igual que en todos los lenguajes de programación. Lo que se coloca entre corchetes es lo que se debe evaluar. Todo el bloque de los condicionales debe estar dentro de un mismo contenedor. Cada opción de cada valor que pueda tomar la condición del [ngSwitch] se evalúa en cada *ngSwitchCase, y eso es lo que se pinta. Mientras que hay un "por defecto" que es el *ngSwitchDefault.-->
+
+<div [ngSwitch]="alerta">
+    <div class="alert alert-primary" role="alert" *ngSwitchCase="'primary'">
+        Aquí tienes un PRIMARY.
+    </div>
+    <div class="alert alert-secondary" role="alert" *ngSwitchCase="'secondary'">
+        Aquí tienes un SECONDARY.
+    </div>
+    <div class="alert alert-success" role="alert" *ngSwitchCase="'success'">
+        Aquí tienes un SUCCESS.
+    </div>
+    <div class="alert alert-warning" role="alert" *ngSwitchCase="'warning'">
+        Aquí tienes un WARNING.
+    </div>
+    <div class="alert alert-info" role="alert" *ngSwitchCase="'info'">
+        Aquí tienes un INFO.
+    </div>
+    <div class="alert alert-light" role="alert" *ngSwitchCase="'light'">
+        Aquí tienes un LIGHT.
+    </div>
+    <div class="alert alert-dark" role="alert" *ngSwitchCase="'dark'">
+        Aquí tienes un DARK.
+    </div>
+    <div class="alert alert-danger" role="alert" *ngSwitchDefault>
+        Aquí tienes un POR DEFECTO <small>(danger)</small>.
+    </div>
+</div>
+
+<button type="button" (click)="cambiarAlerta()" class="btn btn-default">
+  Cambiar alerta
+</button>
