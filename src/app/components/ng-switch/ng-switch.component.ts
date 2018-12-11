@@ -24,10 +24,11 @@ export class NgSwitchComponent implements OnInit {
 
   cambiarAlerta() {
     if(!this.pinchado) {
+      this.pinchado = true;
       this.alerta = this.alertas[this.indice];
     } else {
       this.indice = this.indice + 1;
-      if(this.indice === this.alertas.length-1) {
+      if(this.indice === this.alertas.length) {
         this.indice = 0;
       }
       this.alerta = this.alertas[this.indice];
