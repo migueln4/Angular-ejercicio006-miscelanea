@@ -2,10 +2,15 @@
     <div class="col-md-12 text-center">
 
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Nuevo</button>
-            <button type="button" class="btn btn-secondary">Editar</button>
-            <button type="button" class="btn btn-secondary">Detalle</button>
+            <!--Con routerLinkActive="active", lo que se hace es ponerle el estado de "active" al botón cuando esté en la ruta a la que está apuntando.
+            Con [routerLink] lo que hace es atender a lo que pone en app.routes y hace la redirección pertinente.-->
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['nuevo']">Nuevo</button>
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['editar']">Editar</button>
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['detalle']">Detalle</button>
         </div>
 
     </div>
 </div>
+
+<!--Esto debe ponerse allá donde se vayan a renderizar las rutas hijas porque si no da un error en la consola del navegador. Es lo que luego es sustitutido por el contenido que nosotros le estemos dando.-->
+<router-outlet></router-outlet>
