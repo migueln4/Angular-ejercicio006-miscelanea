@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy } from '@angular/core'; //Se importan todos los diferentes métodos de carga de cada uno de los métodos de carga.
 
 @Component({
   selector: 'app-home',
@@ -30,11 +30,36 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnChanges, DoCheck, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy { //Esto debe implementar todos los métodos del ciclo de vida que existen.
 
-  constructor() { }
+  constructor() {
+    console.log("constructor")
+   }
 
+//Es muy importante que cada uno de los implementados aparezca aquí porque si no, da un error en la clase.
   ngOnInit() {
+    console.log("ngOnInit")
+  }
+  ngOnChanges() {
+    console.log("ngOnChanges")
+  }
+  ngDoCheck() {
+    console.log("ngDoCheck")
+  }
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked")
+  }
+  ngAfterContentInit() {
+    console.log("ngAfterContentInit")
+  }
+  ngAfterViewChecked() {
+    console.log("ngAfterViewChecked")
+  }
+  ngAfterViewInit() {
+    console.log("ngAfterViewInit")
+  }
+  ngOnDestroy() {
+    console.log("ngOnDestroy")
   }
 
 }
